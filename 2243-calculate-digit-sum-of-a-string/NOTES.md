@@ -3,6 +3,7 @@ for that convert from string to int we use char - '0'
 ​
 ​
 //own approach
+```
 string digitSum(string s, int k) {
 if(s.size()<=k)
 return s;
@@ -34,3 +35,4 @@ return digitSum(b,k);
 else
 return b;
 }
+```
