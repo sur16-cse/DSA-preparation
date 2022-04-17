@@ -2,37 +2,18 @@
 class Solution {
 public:
     string digitSum(string s, int k) {
-        if(s.size()<=k)
-            return s;
-        int n = s.size();
-        int j=0;
-        string res = "";
-        vector<string> result;
-        while(j<n){
-            res += s[j];
-            if(res.size() == k){
-                result.push_back(res);
-                res = "";
+        while(s.size()>k){
+            string ns;
+            for(int i=0;i<s.size();i++){
+                int curr=0;
+                for(int j=i;j<i+k && j<s.size();j++){
+                    curr+=(s[j]-'0');
+                }
+                i=i+k-1;
+                ns+=(to_string(curr));
             }
-            
-            j++;
+            s=ns;
         }
-        if(res.size()!=0)
-             result.push_back(res);
-        
-        string b="";
-        for(auto i:result){
-            //long long int a=stoll(result[i]);
-             int sum=0;
-            for(char ch:i){
-                sum += ch - '0';
-            }
-             b+=to_string(sum); 
-        }
-        
-        if(b.length()>=k)
-            return digitSum(b,k);
-        else
-            return b;
+        return s;
     }
 };
