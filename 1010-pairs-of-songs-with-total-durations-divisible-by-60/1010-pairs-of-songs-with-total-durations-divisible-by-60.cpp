@@ -5,8 +5,10 @@ public:
         int count=0;
         for(int i=0;i<time.size();i++){
             int a=time[i]%60;
+            //remainder 0
             if(a==0)
                 count+=v[0];
+            //if remainder not 0
             else
                 count+=v[60-a];
             v[a]++;
