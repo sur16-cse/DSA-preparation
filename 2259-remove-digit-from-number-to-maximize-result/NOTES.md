@@ -3,3 +3,12 @@ The std::string::rfind is a string class member function that is used to search 
 https://www.geeksforgeeks.org/substring-in-cpp/
 ​
 https://www.geeksforgeeks.org/substring-in-cpp/
+​
+```
+for (int i = 0; i < number.size() - 1; i++) {
+if (number[i] == digit && number[i + 1] > digit) {
+return number.erase(i, 1);
+}
+}
+return number.erase(number.rfind(digit), 1);
+```
