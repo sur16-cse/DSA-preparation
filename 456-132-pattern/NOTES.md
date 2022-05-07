@@ -1,1 +1,3 @@
+Use a decreasing stack to store the value of num[k], and use a variable third to store the value of num[j]. All the elements in stack need to bigger than third to satisfy nums[k] < nums[j]. Inversely traverse the array to indicate the first value. if the first value is smaller than the third than return true. if not than put it in the stack.
 ​
+Since we need to hold the monotone of the stack, if the num[i] value is bigger than the top of the stack, we let third = stack.top() and pop out the top of stack, which mean that we can form a bigger num[k] (nums[ptr]) and a bigger nums[j] (stack.top()), So if the next iterate can let the first value smaller than the third more easily.
