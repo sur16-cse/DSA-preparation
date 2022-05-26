@@ -7,26 +7,23 @@ using namespace std;
 // User function Template for C++
 class Solution {
   public:
-  void helper(string &s,string &tmp,int index,unordered_set<char>&vowel,set<string>&ans)
-    {
-        if(index==s.length()) {
-            if(vowel.find(tmp[0])!=vowel.end() && vowel.find(tmp[tmp.length()-1])==vowel.end())
-            {
-                ans.insert(tmp);
-            }
-            return;
-        }
-        tmp.push_back(s[index]);
-        helper(s,tmp,index+1,vowel,ans);
-        tmp.pop_back();
-        helper(s,tmp,index+1,vowel,ans);
+  void helper(string s,string tmp,unordered_set<char>&vowel,set<string>&ans){
+      if (s.empty()) {
+        if(vowel.find(tmp[0])!=vowel.end() && vowel.find(tmp[tmp.length()-1])==vowel.end())
+        ans.insert(tmp);
+        return;
     }
-    set<string> allPossibleSubsequences(string s) 
-    {
+
+    helper(s.substr(1),tmp + s[0],vowel,ans);
+ 
+    helper(s.substr(1), tmp,vowel,ans);
+  }
+    set<string> allPossibleSubsequences(string s) {
+        // code here
         unordered_set<char>vowel={'a','e','i','o','u'};
         set<string>ans;
         string tmp="";
-        helper(s,tmp,0,vowel,ans);
+        helper(s,tmp,vowel,ans);
         return ans;
     }
 };
