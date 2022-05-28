@@ -1,6 +1,9 @@
 class Solution {
 public:
     string largestWordCount(vector<string>& messages, vector<string>& senders) {
+        //The number of words in a message is the number of spaces, plus one.
+
+//We count words for each sender using a hash map, and track max count with the sender's name.
       //track sender and its word count
     unordered_map<string, int> cnt;
     //store max string sender
