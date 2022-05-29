@@ -28,7 +28,7 @@ int main() {
 
 
 string isSubset(int a1[], int a2[], int n, int m) {
-    map<int,int>mp;
+    unordered_map<int,int>mp;
     for(int i=0;i<n;i++){
         mp[a1[i]]++;
     }
