@@ -13,9 +13,9 @@ class Solution{
       long long int sum=0;
         for(long long int i=0;i<n;i++){
             sum+=(a[i]*i);
-            maxm=max(maxm,sum);
+            //maxm=max(maxm,sum);
         }
-        return maxm%1000000007;
+        return sum%1000000007;
     }
 };
 
