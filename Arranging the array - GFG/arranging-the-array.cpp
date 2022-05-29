@@ -33,5 +33,6 @@ int main()
 void Rearrange(int arr[], int n)
 {
     // Your code goes here
+    //https://www.geeksforgeeks.org/stdstable_partition-in-c/
     stable_partition(arr,arr+n,[](int x){return x<0;});
 }
