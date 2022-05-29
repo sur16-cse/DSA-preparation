@@ -1,19 +1,17 @@
 class Solution {
 public:
     int rearrangeCharacters(string s, string target) {
-         map<char,int> mp ; 
-        for(auto a : target) {
-             mp[a] ++;
+        vector<int>a(26,0);
+        vector<int>b(26,0);
+        for(int i=0;i<s.length();i++){
+             a[s[i]-'a']++;
         }
-        map<char , int> mpp ; 
-        for(auto a : s) {
-            mpp[a] ++ ; 
+        for(int i=0;i<target.length();i++){
+             b[target[i]-'a']++;
         }
-        int mn = INT_MAX  ; 
-        for(auto a : mp ) {
-             mn = min(mn , mpp[a.first]/a.second); 
-        }
-        return mn ; 
-    
+        int minm=INT_MAX,ans=0;
+       for(int i=0;i<target.length();i++)
+           minm=min(minm,a[target[i]-'a']/b[target[i]-'a']);
+        return minm;
     }
 };
