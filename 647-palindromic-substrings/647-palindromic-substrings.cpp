@@ -1,22 +1,17 @@
 class Solution {
-private:
- string str;
-    int n, ans;
-    
-    void pal(int l, int r) {
+   public: 
+    void pal(int l, int r,int n,int &ans,string str) {
         while(l>=0 && r<n && str[l] == str[r]){
             ++ans;
             --l, ++r;
         }
     }
-    
-public:
     int countSubstrings(string s) {
-        str = s, n = s.size(), ans = 0;
+        int n = s.size(), ans = 0;
         
         for(int i=0; i<n; ++i) {
-            pal(i, i);
-            pal(i, i+1);
+            pal(i, i,n,ans,s);
+            pal(i, i+1,n,ans,s);
         }
         
         return ans;
