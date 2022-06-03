@@ -30,8 +30,6 @@ public:
             }
             else
             {
-                //otherwise if the current runningSum doesn't exist in the hashmap, then store it as it maybe used later on
-                
                 mp[runningSum]=i;
             }
                     
