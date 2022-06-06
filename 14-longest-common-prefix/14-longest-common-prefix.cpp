@@ -6,7 +6,6 @@ public:
         if(n==1) return strs[0];
         sort(strs.begin(),strs.end());
         string a=strs[0],b=strs[n-1];
-        //int minm=min(a.size(),a)
         int i=0,j=0;
         while(i<a.size() && a[i]==b[j]){
             i++;j++;
