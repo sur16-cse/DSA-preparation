@@ -5,10 +5,10 @@ public:
         int carry=0;
         string ans="";
         while(i>=0 || j>=0 || carry>0){
-            if(i>=0)carry+=(num1[i--]-'0');
-            if(j>=0)carry+=(num2[j--]-'0');
-            ans+=char(carry%10+'0');
-            carry=carry/10;
+        if(i>=0) carry+=(num1[i--]-'0');
+        if(j>=0) carry+=(num2[j--]-'0');
+         ans+=(carry%10 + '0');
+         carry=carry/10;
         }
         reverse(ans.begin(),ans.end());
         return ans;
