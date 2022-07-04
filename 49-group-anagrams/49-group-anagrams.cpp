@@ -1,20 +1,18 @@
 class Solution {
 public:
-    vector<vector<string>> groupAnagrams(vector<string>& s) {
-        int n=s.size();
-        unordered_map<string,vector<string>>mp;
-        string str;
-        for(int i=0;i<n;i++)
-        {   str=s[i];
-            sort(s[i].begin(),s[i].end());
-            //put into the map
-            mp[s[i]].push_back(str);
+    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        int n=strs.size();
+        unordered_map<string,vector<string>>ans;
+        for(int i=0;i<n;i++){
+            string a=strs[i];
+            sort(strs[i].begin(),strs[i].end());
+            ans[strs[i]].push_back(a);
         }
-        vector<vector<string>> ans;
-        for(auto it:mp)
+         vector<vector<string>> an;
+        for(auto it:ans)
         {
-            ans.push_back(it.second);
+            an.push_back(it.second);
         }
-       return ans;
+       return an;
     }
 };
